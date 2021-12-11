@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="In this work, our goal is to synthesize whole-body grasping motion. Given a 3D object, we aim to generate diverse and natural whole-body human motions that approach and grasp the object. This task is challenging as it requires modeling both whole-body dynamics and dexterous finger movements. To this end, we propose SAGA (StochAstic whole-body Grasping with contAct) which consists of two key components: (a) Static whole-body grasping pose generation. Specifically, we propose a multi-task generative model, to jointly learn static whole-body grasping poses and human-object contacts. (b) Grasping motion infilling. Given an initial pose and the generated whole-body grasping pose as the starting and ending poses of the motion respectively, we design a novel contact-aware generative motion infilling module to generate a diverse set of grasp-oriented motions. We demonstrate the effectiveness of our method being the first generative framework to synthesize realistic and expressive whole-body motions that approach and grasp randomly placed unseen objects.">
+      <meta name="keywords" content="human motion synthesis; human-object interaction; human-scene interaction; 3D object; deep learning; generative model; 3D vision; computer vision;">
+      <meta name="author" content="Jiahao Wang">
+      <title>SAGA: Stochastic Whole-Body Grasping with Contact</title>
+
+      <!--<meta property="og:title" content="EgoBody: ..." />-->
+      <!--<meta property="og:description" content="EgoBody is a ... ">-->
+      <!--<meta property="og:image" content="images/teaser.jpg" />-->
+
+      <!--<meta name="twitter:card" content="summary_large_image" />-->
+      <!--<meta name="twitter:title" content="EgoBody: ..." />-->
+      <!--<meta name="twitter:description" content="EgoBody is a ..." />-->
+      <!--<meta name="twitter:image" content="https://neuralbodies.github.io/LEAP/images/teaser1200x630.jpg" />-->
+      <!--<meta name="twitter:image:alt" content="EgoBody" />-->
+
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/scrolling-nav.css" rel="stylesheet">
+      <!-- nice figures  -->
+      <!--<link rel="stylesheet" href="css/font-awesome.css">-->
+      <!--<link rel="icon" type="image/png" href="images/favicon.png">-->
+
+   </head>
+   <body id="page-top">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">SAGA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#downloads">Downloads</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#citation">Citation</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+
+
+      <header class="bg-light text-black">
+          <div class="container text-center">
+             <h1>SAGA: Stochastic Whole-Body Grasping with Contact</h1><br>
+              <div id="content">
+          <div id="content-inner">
+
+            <div class="section head">
+
+                <div class="authors">
+                    <h5>
+                        <a href="https://scholar.google.com/citations?user=dv1IuQUAAAAJ&hl=zh-CN">Yan Wu*</a><sup>1</sup>&nbsp;
+                        <a href="https://jiahaoplus.github.io//">Jiahao Wang*</a><sup>1</sup>&nbsp;
+                        <a href="https://yz-cnsdqz.github.io/">Yan Zhang</a><sup>1</sup>&nbsp;
+                        <a href="https://scholar.google.com/citations?hl=en&user=q7JVOrQAAAAJ">Siwei Zhang</a><sup>1</sup>&nbsp;
+                        <a href="https://ait.ethz.ch/people/hilliges/">Otmar Hilliges</a><sup>1</sup>&nbsp;
+                        <a href="https://www.yf.io/">Fisher Yu</a><sup>1</sup>&nbsp;
+                        <a href="https://inf.ethz.ch/people/person-detail.MjYyNzgw.TGlzdC8zMDQsLTg3NDc3NjI0MQ==.html">Siyu Tang</a><sup>1</sup>
+                        <h5>
+                </div>
+
+                <div class="affiliations">
+                    <h5>
+                        <sup>1</sup><a href="https://ethz.ch/en.html">ETH Zürich</a>&nbsp;
+                        <h5>
+                </div>
+
+
+                <!--<div class="venue"><h5>International Conference on Computer Vision (<a href="http://iccv2021.thecvf.com/" target="_blank">ICCV</a>) 2021 (Oral)<h5></div>-->
+
+                <div class="downloads">
+                    <br><h3>
+                    <a class="publink" href="https://arxiv.org/pdf/xxxx.pdf" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;
+                    <!--<a class="publink" href="https://github.com/sanweiliti/EgoBody" target="_blank" style="text-decoration: none"> Dataset (coming soon) <i class="fa fa-database"></i></a> &nbsp;-->
+                    <a class="publink" href="https://github.com/JiahaoPlus/SAGA" target="_blank" style="text-decoration: none"> Code (coming soon) <i class="fa fa-github"></i></a> &nbsp;
+                    <h3>
+                </div>
+
+            </div>
+
+
+            <!-- <br> -->
+
+
+        </div>
+      </header>
+
+
+      <section id="about" class="about-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <p class="lead text-justify">
+                     <!-- where linear blend skinning (LBS) functions are usually applied to drive the deformation of a human body from a canonical space to a posed space.  -->
+                  </p>
+                  <br> <br>
+                   <div class="text-center">
+                     <!-- <p><img class="img-fluid" alt="teaser" src="https://via.placeholder.com/1500x600"></p> -->
+                     <p><img class="img-fluid" alt="teaser" src="images/teaser_v1.jpg"></p>
+                       <p class="lead text-justify">
+                           <b>Overview</b>. Whole-body grasping motion sequences (in beige) generated by SAGA starting from a given pose (in white) to approach and grasp randomly placed unseen objects. For each sample, we present the hand and finger motions in the last few frames on the left column.
+                       
+                  </p>
+                  </div>
+                  <br><br>
+                  <h2>Abstract</h2>
+                  <p class="lead text-justify">
+                     Human grasping synthesis has numerous applications including AR/VR, video games and robotics. While some methods have been proposed to generate realistic hand-object interaction for object grasping and manipulation, they typically only consider the hand interacting with objects. In this work, our goal is to synthesize whole-body grasping motion. Given a 3D object, we aim to generate diverse and natural whole-body human motions that approach and grasp the object. This task is challenging as it requires modeling both whole-body dynamics and dexterous finger movements. To this end, we propose SAGA (StochAstic whole-body Grasping with contAct) which consists of two key components: (a) Static whole-body grasping pose generation. Specifically, we propose a multi-task generative model, to jointly learn static whole-body grasping ending poses and human-object contacts. (b) Grasping motion infilling. Given an initial pose and the generated whole-body grasping pose as the starting and ending poses of the motion respectively, we design a novel contact-aware generative motion infilling module to generate a diverse set of grasp-oriented motions. We demonstrate the effectiveness of our method being the first generative framework to synthesize realistic and expressive whole-body motions that approach and grasp randomly placed unseen objects.
+                  </p>
+                  <!--<p class="lead text-justify">
+                      where linear blend skinning (LBS) functions are usually applied to drive the deformation of a human body from a canonical space to a posed space.  -->
+                  <!-- </p>
+                  <br> <br>
+                   <div class="img-wide text-center">
+                      To account for the undefined skinning weights for the points
+                     that are not on the surface of a human body, LEAP leverages
+                     the consistency relationship between the forward LBS
+                     and the inverse LBS weights and incorporates cycle-distance
+                     into the occupancy network.
+                  </p> -->
+                  <!--<p class="lead text-justify">
+                      LEAP captures accurate identify- and pose-dependent
+                     deformations through advanced encoding schemes that
+                     incorporate prior knowledge about the kinematic structure
+                     and plausible shape of a human body.
+                  </p> -->
+                   <br> <br>
+                   <!--<h2>Dataset Capture Overview</h2>
+                  <div class="text-center">
+                     <p><img class="img-fluid" alt="method overview" src="images/setup.jpg"></p>
+                  </div>
+                   <p class="lead text-justify">
+                       EgoBody collects sequences of subjects performing diverse social interactions in various indoor scenes.
+                       For each sequence, two subjects are involved in one or more predefined interactions.
+                       Three Azure Kinects capture the interactions from 3 views (A, B, C) with RGBD streams,
+                       and a synchronized HoloLens2 worn by one subject captures the first-person view image (D),
+                       together with depth, head, hand and eye gaze tracking streams.
+                   </p> -->
+
+                  <!-- <h4>Use-case</h4> -->
+                  <!--<p class="lead text-justify"> -->
+                     <!-- We release a pretrained LEAP model that generalizes to unseen human bodies.
+                    LEAP can be easily integrated into learning pipelines that require
+                     an efficient occupancy check to resolve collisions with other geometries flexibly represented as point clounds. -->
+                  <!--</p>-->
+                  <!--<br> <br>-->
+                  <!--<div class="text-center">-->
+                     <!--<p><img class="img-fluid" alt="Realistic human bodies" src="images/LEAP optimization.svg"></p>-->
+                  <!--</div>-->
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section id="video" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Video</h2>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="videos/main.mp4" title="SAGA: Stochastic Whole-Body Grasping with Contact" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--<section id="more_vis" class="">-->
+         <!--<div class="container">-->
+            <!--<div class="row">-->
+               <!--<div class="col-lg-10 mx-auto">-->
+                   <!--<br>-->
+                  <!--<h2 class="section-title-tc">More Visualization Results</h2>-->
+                  <!--<div class="embed-responsive embed-responsive-16by9">-->
+                    <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xxx" title="xxx" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                  <!--</div>-->
+               <!--</div>-->
+            <!--</div>-->
+         <!--</div>-->
+
+      <section id="downloads" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                   <h2>Downloads</h2> <br>
+                  <h2 class="img-wide text-center">
+                      <a class="publink" href="https://arxiv.org/pdf/xxxx.pdf" target="_blank" style="text-decoration: none"> Paper <i class="fa fa-print"></i></a> &nbsp;&nbsp;
+                      <!--<a class="publink" href="https://github.com/sanweiliti/EgoBody" target="_blank" style="text-decoration: none"> Dataset (coming soon) <i class="fa fa-database"></i></a> &nbsp;-->
+                      <a class="publink" href="https://github.com/JiahaoPlus/SAGA" target="_blank" style="text-decoration: none"> Code (coming soon) <i class="fa fa-github"></i></a> &nbsp;&nbsp;
+                  </h2>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+
+      <section id="citation" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Citation</h2>
+                  <br>
+                  <a class="publink" target="_blank" href="https://arxiv.org/pdf/xxxx.pdf"><b>
+                    SAGA: Stochastic Whole-Body Grasping with Contact </b><br></a>
+                    Yan Wu*, Jiahao Wang*, Yan Zhang, Siwei Zhang, Otmar Hilliges, Fisher Yu, Siyu Tang<br>
+                  <br><br>
+<pre style="display: block; background-color: #f5f5f5; border: 1px solid #ccc; border-radius: 4px">
+@inproceedings{TODO,
+   title = {SAGA: Stochastic Whole-Body Grasping with Contact},
+   author = {Wu, Yan and Wang, Jiahao and Zhang, Yan and Zhang, Siwei and Hilliges, Otmar and Yu, Fisher and Tang, Siyu},
+   booktitle = {TODO},
+   month = Dec,
+   year = {2021}
+}</pre>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+
+
+      <section id="team" class="team-section">
+         <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="section-title-tc">Team</h2>
+                        <div class="text-center">
+                         <table>
+                               <tr>
+                                   <th> <img src="images/teams/yanwu.jpg" width="125" height="125" border="0">  </th>
+                                   <th> <img src="images/teams/jiahao.jpg" width="125" height="125" border="0">  </th>
+                                   <th> <img src="images/teams/yan.jpg" width="125" height="125" border="0"> </th>
+                                   <th> <img src="images/teams/siwei.jpg" width="125" height="125" border="0">  </th>
+                                   <th> <img src="images/teams/otmar.jpg" width="125" height="125" border="0"> </th>
+                                   <th> <img src="images/teams/fisher.jpeg" width="125" height="125" border="0"> </th>
+                                   <th> <img src="images/teams/siyu.jpg" width="125" height="125" border="0"> </th>
+                               </tr>
+
+                               <tr>
+                                   <td> Yan Wu  </td>
+                                   <td> Jiahao Wang  </td>
+                                   <td> Yan Zhang </td>
+                                   <td> Siwei Zhang  </td>
+                                   <td> Otmar Hilliges </td>
+                                   <td> Fisher Yu </td>
+                                   <td> Siyu Tang </td>
+                               </tr>
+                         </table>
+
+                        </div>
+                  </div>
+               </div>
+            </div>
+      </section>
+
+      <section id="contact" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+	                <h2>Contact</h2>
+		            <br>For questions, please contact Yan Wu:<br><a href="mailto:wuyan@student.ethz.ch">wuyan@student.ethz.ch</a> or Jiahao Wang:<br><a href="mailto:jiahwang@student.ethz.ch">jiahwang@student.ethz.ch</a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+
+
+      <!--<section id="team" class="team-section">-->
+         <!--<div class="container">-->
+            <!--<div class="row">-->
+               <!--<div class="col-lg-10 mx-auto">-->
+                  <!--<h2 class="section-title-tc">Team</h2>-->
+                  <!--<div class="row">-->
+                     <!--<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">-->
+                           <!--<div class="mainflip">-->
+                                 <!--<div class="card">-->
+                                    <!--<div class="card-body text-center">-->
+                                       <!--<p><img class=" img-fluid" src="images/teams/siwei.jpg" alt="card image"></p>-->
+                                       <!--<h5 class="card-title">Siwei Zhang</h5>-->
+                                    <!--</div>-->
+                                 <!--</div>-->
+                           <!--</div>-->
+                     <!--</div>-->
+
+                     <!--<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">-->
+                        <!--<div class="mainflip">-->
+                              <!--<div class="card">-->
+                                 <!--<div class="card-body text-center">-->
+                                    <!--<p><img class=" img-fluid" src="images/teams/yan.jpg" alt="card image"></p>-->
+                                    <!--<h5 class="card-title">Yan Zhang</h5>-->
+                                 <!--</div>-->
+                              <!--</div>-->
+                        <!--</div>-->
+                     <!--</div>-->
+
+                     <!--<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">-->
+                        <!--<div class="mainflip">-->
+                              <!--<div class="card">-->
+                                 <!--<div class="card-body text-center">-->
+                                    <!--<p><img class=" img-fluid" src="images/teams/federica.jpeg" alt="card image"></p>-->
+                                    <!--<h5 class="card-title">Federica Bogo</h5>-->
+                                 <!--</div>-->
+                              <!--</div>-->
+                        <!--</div>-->
+                     <!--</div>-->
+
+                      <!--<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">-->
+                        <!--<div class="mainflip">-->
+                              <!--<div class="card">-->
+                                 <!--<div class="card-body text-center">-->
+                                    <!--<p><img class=" img-fluid" src="images/teams/marc.jpg" alt="card image"></p>-->
+                                    <!--<h5 class="card-title">Marc Pollefeys</h5>-->
+                                 <!--</div>-->
+                              <!--</div>-->
+                        <!--</div>-->
+                     <!--</div>-->
+
+                     <!--<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">-->
+                        <!--<div class="mainflip">-->
+                              <!--<div class="card">-->
+                                 <!--<div class="card-body text-center">-->
+                                    <!--<p><img class=" img-fluid" src="images/teams/siyu.jpg" alt="card image"></p>-->
+                                    <!--<h5 class="card-title">Siyu Tang</h5>-->
+                                 <!--</div>-->
+                              <!--</div>-->
+                        <!--</div>-->
+                     <!--</div>-->
+
+                  <!--</div>-->
+               <!--</div>-->
+            <!--</div>-->
+         <!--</div>-->
+      <!--</section>-->
+
+
+
+
+
+
+      <!-- Footer -->
+      <footer class="py-5 bg-dark">
+         <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; EgoBody 2021</p>
+         </div>
+         <!-- /.container -->
+      </footer>
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Plugin JavaScript -->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom JavaScript for this theme -->
+      <script src="js/scrolling-nav.js"></script>
+   </body>
+</html>

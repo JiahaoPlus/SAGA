@@ -1,0 +1,92 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    font-family: 'Helvetica', serif;
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 10px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+h1 {
+  font-size: 4.5rem;
+  line-height: 5.5rem;
+}
+
+section.intro-section {
+    padding-top: 100px;
+    text-align: center;
+    background: #fff;
+}
+
+
+section.team-section {
+    padding-top: 100px;
+    text-align: center;
+    background: #fff;
+}
+
+
+section.team-section .img-profile-small  {
+    max-width: 15rem;
+    max-height: 15rem;
+    border: 10px solid rgba(255, 255, 255, 0.5);
+}
+
+section.team-section .text-description  {
+    max-width: 15rem;
+}
+
+
+
+#students {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+#students td, #students th {
+    border: 1px solid #fff;
+    padding: 5px;
+}
+
+#students tr:nth-child(even){background-color: #f2f2f2;}
+
+#students tr:hover {background-color: #ddd;}
+
+#students th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #eee;
+    color: black;
+}
+
+a {
+  color:  #808080;
+}
+
+a:hover, a:focus, a:active {
+  color: #824027;
+}
+

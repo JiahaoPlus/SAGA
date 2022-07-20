@@ -369,8 +369,7 @@ class MotionLoader(data.Dataset):
                     if not self.is_debug:
                         np.savez_compressed('{}_{}.npz'.format(prefix, self.mode), Xmean=Xmean, Xstd=Xstd)
                     else:
-                        np.savez_compressed('{}_{}.npz'.format(prefix, self.mode), Xmean=Xmean, Xstd=Xstd)
-                        # print('local debug. do not save stats.')
+                        print('local debug. do not save stats.')
                     self.clip_img_list = (self.clip_img_list - Xmean) / Xstd
                 elif self.split == 'test':
                     stats = np.load('{}_{}.npz'.format(prefix, self.mode))
@@ -397,11 +396,7 @@ class MotionLoader(data.Dataset):
                                             Xmean_global_xy=Xmean_global_xy, Xstd_global_xy=Xstd_global_xy,
                                             Xmean_global_r=Xmean_global_r, Xstd_global_r=Xstd_global_r)
                     else:
-                        np.savez_compressed('{}_{}.npz'.format(prefix, self.mode),
-                                            Xmean_local=Xmean_local, Xstd_local=Xstd_local,
-                                            Xmean_global_xy=Xmean_global_xy, Xstd_global_xy=Xstd_global_xy,
-                                            Xmean_global_r=Xmean_global_r, Xstd_global_r=Xstd_global_r)
-                        # print('local debug. do not save stats.')
+                        print('local debug. do not save stats.')
                     self.clip_img_list[:, 0] = (self.clip_img_list[:, 0] - Xmean_local) / Xstd_local
                     self.clip_img_list[:, 1:3] = (self.clip_img_list[:, 1:3] - Xmean_global_xy) / Xstd_global_xy
                     self.clip_img_list[:, 3] = (self.clip_img_list[:, 3] - Xmean_global_r) / Xstd_global_r

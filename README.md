@@ -16,9 +16,9 @@ If you have any questions, feel free to contact us:
 ### Citation
 ```bash
 @inproceedings{wu2022saga,
-  title={SAGA: Stochastic Whole-Body Grasping with Contact},
-  author={Wu, Yan and Wang, Jiahao and Zhang, Yan and Zhang, Siwei and Hilliges, Otmar and Yu, Fisher and Tang, Siyu},
-  booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
-  year={2022}
+  title = {SAGA: Stochastic Whole-Body Grasping with Contact},
+  author = {Wu, Yan and Wang, Jiahao and Zhang, Yan and Zhang, Siwei and Hilliges, Otmar and Yu, Fisher and Tang, Siyu},
+  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
+  year = {2022}
 }
 ```

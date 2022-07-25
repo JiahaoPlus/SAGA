@@ -5,7 +5,7 @@ SAGA: Stochastic Whole-Body Grasping with Contact
 ![alt text](https://github.com/JiahaoPlus/SAGA/blob/main/images/teaser.png)
 This repository is the official implementation for the ECCV 2022 paper: [SAGA: Stochastic Whole-Body Grasping with Contact](https://jiahaoplus.github.io/SAGA/saga.html).
 
-\[[Project Page](https://jiahaoplus.github.io/SAGA/saga.html) | [paper](https://arxiv.org/abs/2112.10103)\]
+\[[Project Page](https://jiahaoplus.github.io/SAGA/saga.html) | [Paper](https://arxiv.org/abs/2112.10103)\]
 
 **Code is coming soon!**
 

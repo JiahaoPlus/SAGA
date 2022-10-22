@@ -1,0 +1,38 @@
+base_lr: 0.0005
+batch_size: 128
+best_net: null
+bps_size: 4096
+c_weights_path: null
+cuda_id: 0
+dataset_dir: null
+kl_coef: 0.005
+latentD: 16
+log_every_epoch: 10
+n_epochs: 100
+n_markers: 512
+n_neurons: 512
+n_workers: 8
+reg_coef: 0.0005
+# rhm_path: null
+seed: 4815
+try_num: 0
+use_multigpu: false
+vpe_path: null
+work_dir: null
+load_on_ram: False
+cond_object_height: True
+# gender: male  # 'male' / 'female' /
+motion_intent: False  # 'use'/'offhand'/'pass'/'lift'/ False(all intent)
+object_class: ['all']  # ['', ''] / ['all']
+robustkl: False
+kl_annealing: True
+kl_annealing_epoch: 100
+marker_weight: 1
+foot_weight: 0
+collision_weight: 0
+consistency_weight: 1
+dropout: 0.1
+obj_feature: 12
+pointnet_hc: 64
+continue_train: False
+data_representation: 'markers_143'     # 'joints' / 'markers_143' / 'markers_214' / 'markers_593'

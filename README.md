@@ -6,7 +6,7 @@ SAGA: Stochastic Whole-Body Grasping with Contact
 > **ECCV 2022**  
 > Yan Wu*, Jiahao Wang*, Yan Zhang, Siwei Zhang, Otmar Hilliges, Fisher Yu, Siyu Tang
 
-![alt text](https://github.com/wuyan01/FullGraspMotion-SAGA/blob/master/images/teaser.png)
+![alt text](https://github.com/JiahaoPlus/SAGA/blob/main/images/teaser.png)
 This repository is the official implementation for the ECCV 2022 paper: [SAGA: Stochastic Whole-Body Grasping with Contact](https://jiahaoplus.github.io/SAGA/saga.html).
 
 \[[Project Page](https://jiahaoplus.github.io/SAGA/saga.html) | [Paper](https://arxiv.org/abs/2112.10103)\]
@@ -16,16 +16,16 @@ Given an object in 3D space and a human initial pose, we aim to generate diverse
 
 
 <center class="half">
-  <img src="https://github.com/wuyan01/FullGraspMotion-SAGA/blob/master/images/motion1.gif" width="400"/><img src="https://github.com/wuyan01/FullGraspMotion-SAGA/blob/master/images/motion2.gif" width="400">
+  <img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/motion1.gif" width="400"/><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/motion2.gif" width="400">
 </center>
 
 ## Contents
-- [Installation](https://github.com/wuyan01/FullGraspMotion-SAGA#installation)
-- [Dataset Preparation](https://github.com/wuyan01/FullGraspMotion-SAGA#Dataset)
-- [Pretrained models](https://github.com/wuyan01/FullGraspMotion-SAGA#pretrained-models)
-- [Training from scratch](https://github.com/wuyan01/FullGraspMotion-SAGA#train-from-scratch)
-- [Grasping poses and motions generation for given object](https://github.com/wuyan01/FullGraspMotion-SAGA#inference) (object position and orientation can be customized)
-- [Visualization](https://github.com/wuyan01/FullGraspMotion-SAGA#visualization)
+- [Installation](https://github.com/JiahaoPlus/SAGA#installation)
+- [Dataset Preparation](https://github.com/JiahaoPlus/SAGA#Dataset)
+- [Pretrained models](https://github.com/JiahaoPlus/SAGA#pretrained-models)
+- [Training from scratch](https://github.com/JiahaoPlus/SAGA##train-from-scratch)
+- [Grasping poses and motions generation for given object](https://github.com/JiahaoPlus/SAGA#inference) (object position and orientation can be customized)
+- [Visualization](https://github.com/JiahaoPlus/SAGA#visualization)
 
 ## Installation
 - <strong>Packages</strong>

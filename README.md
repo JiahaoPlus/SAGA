@@ -25,20 +25,20 @@ Given an object in 3D space and a human initial pose, we aim to generate diverse
   <tr>
     <th rowspan="2"><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-0.jpg" width=200></th>
     <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-60.jpg" width=400></th>
-    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-video.gif" width=360></th>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-video.gif" width=350></th>
   </tr>
   <tr>
     <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-60-first-view.jpg" width=400></th>
-    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-movie-first-view.gif" width=360></th>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-movie-first-view.gif" width=350></th>
   </tr>
   <tr>
     <th rowspan="2"><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-0.jpg" width=200></th>
     <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-60.jpg" width=400></th>
-    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-video.gif" width=360></th>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-video.gif" width=350></th>
   </tr>
   <tr>
     <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-60-first-view.jpg" width=400></th>
-    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-movie-first-view.gif" width=360></th>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-movie-first-view.gif" width=350></th>
   </tr>
 </table>
 

@@ -14,7 +14,7 @@ This repository is the official implementation for the ECCV 2022 paper: [SAGA: S
 ## Introduction
 Given an object in 3D space and a human initial pose, we aim to generate diverse human motion sequences to approach and grasp the given object. We propose a two-stage pipeline to address this problem by generating grasping ending pose first and then infilling the in-between motion.
 
-![alt text](https://github.com/wuyan01/FullGraspMotion-SAGA/blob/master/images/two-stage-pipeline.png)
+![alt text](https://github.com/JiahaoPlus/SAGA/blob/main/images/two-stage-pipeline.png)
 
 <table class="center">
   <tr>

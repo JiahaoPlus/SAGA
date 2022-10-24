@@ -12,12 +12,35 @@ This repository is the official implementation for the ECCV 2022 paper: [SAGA: S
 \[[Project Page](https://jiahaoplus.github.io/SAGA/saga.html) | [Paper](https://arxiv.org/abs/2112.10103)\]
 
 ## Introduction
-Given an object in 3D space and a human initial pose, we aim to generate diverse human motion sequences to approach and grasp the given object.
+Given an object in 3D space and a human initial pose, we aim to generate diverse human motion sequences to approach and grasp the given object. We propose a two-stage pipeline to address this problem by generating grasping ending pose first and then infilling the in-between motion.
 
+![alt text](https://github.com/wuyan01/FullGraspMotion-SAGA/blob/master/images/two-stage-pipeline.png)
 
-<center class="half">
-  <img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/motion1.gif" width="400"/><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/motion2.gif" width="400">
-</center>
+<table class="center">
+  <tr>
+    <th>Input</th>
+    <th>First-stage result</th>
+    <th>Second-stage result</th>
+  </tr>
+  <tr>
+    <th rowspan="2"><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-0.jpg" width=200></th>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-60.jpg" width=400></th>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-video.gif" width=370></th>
+  </tr>
+  <tr>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-60-first-view.jpg" width=400></th>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/binoculars-movie-first-view.gif" width=370></th>
+  </tr>
+  <tr>
+    <th rowspan="2"><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-0.jpg" width=200></th>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-60.jpg" width=400></th>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-video.gif" width=370></th>
+  </tr>
+  <tr>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-60-first-view.jpg" width=400></th>
+    <th><img src="https://github.com/JiahaoPlus/SAGA/blob/main/images/wineglass-movie-first-view.gif" width=370></th>
+  </tr>
+</table>
 
 ## Contents
 - [Installation](https://github.com/JiahaoPlus/SAGA#installation)

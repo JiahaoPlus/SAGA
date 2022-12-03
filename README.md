@@ -46,7 +46,7 @@ Given an object in 3D space and a human initial pose, we aim to generate diverse
 - [Installation](https://github.com/JiahaoPlus/SAGA#installation)
 - [Dataset Preparation](https://github.com/JiahaoPlus/SAGA#Dataset)
 - [Pretrained models](https://github.com/JiahaoPlus/SAGA#pretrained-models)
-- [Training from scratch](https://github.com/JiahaoPlus/SAGA##train-from-scratch)
+- [Train](https://github.com/JiahaoPlus/SAGA#train)
 - [Grasping poses and motions generation for given object](https://github.com/JiahaoPlus/SAGA#inference) (object position and orientation can be customized)
 - [Visualization](https://github.com/JiahaoPlus/SAGA#visualization)
 
@@ -127,7 +127,7 @@ SAGA
 ## Pretrained models
 Download pretrained models from [[Google Drive]](https://drive.google.com/uc?export=download&id=1dxzBBOUbRuUAlNQGxnbmWLmtP7bmEE_9), and the pretrained models include:
 - Stage 1: pretrained WholeGrasp-VAE for male and female respectively
-- Stage 2: pretrained TrajFill-VAE and LocalMotionFill-VAE
+- Stage 2: pretrained TrajFill-VAE and LocalMotionFill-VAE (end to end)
 
 ## Train
 ### First Stage: WholeGrasp-VAE training
@@ -136,8 +136,9 @@ python train_grasppose.py --data_path ./dataset/GraspPose --gender male --exp_na
 ```
 
 ### Second Stage: MotionFill-VAE training
+Can train TrajFill-VAE and LocalMotionFill-VAE separately first (download separately trained models from [[Google Drive]](https://drive.google.com/uc?export=download&id=1eyUW7YLmnAj-CHwIMe9qsAs6W63Aw7Ce)), and then train them end-to-end:
 ```
-python train_graspmotion.py
+python train_graspmotion.py --pretrained_path_traj $PRETRAINED_MODEL_PATH/TrajFill_model_separate_trained.pkl --pretrained_path_motion $PRETRAINED_MODEL_PATH/LocalMotionFill_model_separate_trained.pkl
 ```
 
 ## Inference
